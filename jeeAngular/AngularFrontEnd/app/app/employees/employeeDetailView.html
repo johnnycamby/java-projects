@@ -1,0 +1,59 @@
+
+<div class="panel panel-primary" >
+    <div class="panel-heading" style="font-size: large; background-color: lightblue; border-color: lightblue"> {{vm.firstName}} </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-md-4">Job Title:</div>
+                    <div class="col-md-6">{{vm.employee.jobTitle}}</div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">First Name:</div>
+                    <div class="col-md-6">{{vm.employee.firstName}}</div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">Last Name:</div>
+                    <div class="col-md-6">{{vm.employee.lastName}}</div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">Email:</div>
+                    <div class="col-md-6">{{vm.employee.email}}</div>                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">Extension #:</div>
+                    <div class="col-md-6">{{vm.employee.extension}}</div>                    
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <image 
+                    class="center-block img-responsive"
+                    style="width: 200px; 
+                    margin: 2px;"
+                    ng-src="{{vm.employee.image}}"
+                    title="{{vm.employee.firstName}}">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel-footer" style="background-color: lightblue; border-color: lightblue">
+        <a class="btn btn-default btn-sm" ui-sref="employeeList" style="width: 80px">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+            Back
+        </a>
+        <a class="btn btn-primary btn-sm" ui-sref="employeeEdit.info({employeeNumber: vm.employee.employeeNumber})" style="width: 80px; margin-left: 10px">
+            <i class="glyphicon glyphicon-edit"></i>
+            Edit
+        </a>
+    </div>
+
+</div>

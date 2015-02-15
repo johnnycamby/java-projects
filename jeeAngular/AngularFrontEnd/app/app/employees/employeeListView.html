@@ -1,0 +1,47 @@
+
+<div class="panel panel-primary" style="border-color: lightblue">
+    <div class="panel-heading" style="font-size: large; background-color: lightblue; border-color: lightblue"> Employee List </div>
+    
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <td>
+                    <button class="btn bg-primary btn-sm" type="button" ng-click="vm.toggleImage()">
+                        {{vm.showImage ? 'Hide' : 'Show'}} Image
+                    </button>
+                </td>
+                <td>Job Title</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Extension #</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in vm.employees">
+                <td>
+                    <img ng-if="vm.showImage"
+                         ng-src="{{employee.image}}"
+                         title="{{employee.firstName}}"
+                         style="width: 50px; margin: 2px;">
+                </td>
+                <td>{{employee.jobTitle}}</td>
+                <td>
+                    <a ui-sref="employeeDetail({employeeNumber: employee.employeeNumber})">{{employee.firstName}}</a>
+                </td>
+                <td>
+                    <a ui-sref="employeeDetail({employeeNumber: employee.employeeNumber})">{{employee.lastName}}</a>
+                </td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.extension}}</td>
+                  
+                <td>
+                    <a class="btn btn-primary btn-sm" ui-sref="employeeEdit.info({employeeNumber: employee.employeeNumber})">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
